@@ -1,21 +1,26 @@
 version: "2.3"
 services:
-  jupyterlab-cuda:
+  nvim:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        BASE_IMAGE: "nvidia/cuda:11.2.0-cudnn8-runtime-ubuntu20.04"
-        REQUIREMENTS_FILE: "requirements.txt"
-    image: "hsc-jupyter-lab-cuda"
+        BASE_IMAGE: "ubuntu:20.04"
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+        USERNAME: ${USERNAME}
+    image: "hsc-wp:nvim"
     # command: ["jupyter", "lab", "--allow-root", "--port=8888", "--ip=0.0.0.0"]
-    container_name: "hsc-jupyter-lab-cuda"
-    runtime: nvidia
+    container_name: "hsc-wp-nvim"
     volumes:
-      - $HOME:/environment
+      - ${HOME}:/environment
     working_dir: "/environment"
     shm_size: '32gb'
     ports:
       - "4569:8888"
     tty: true
     stdin_open: true
+
+    env_file:
+      - .env
+

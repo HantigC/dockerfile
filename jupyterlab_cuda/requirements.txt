@@ -10,15 +10,9 @@ torch==1.7.0
 torchvision==0.8.1
 tqdm>=4.41.0
 fire
-elasticsearch
-python-logstash
-logstash_formatter
-pygeohash
-amqpstorm==2.7.2
 h5py
 Pillow
 scipy
-sympy
 scikit-image
 scikit-learn==0.23.2
 protobuf
@@ -29,7 +23,7 @@ wget
 more_itertools
 aiohttp
 aiofiles
-geopy
+#geopy
 ipympl
 
 # logging -------------------------------------
@@ -38,7 +32,7 @@ ipympl
 # plotting ------------------------------------
 seaborn>=0.11.0
 pandas
-xgboost
+#xgboost
 
 # export --------------------------------------
 # coremltools>=4.1
@@ -48,12 +42,12 @@ xgboost
 # extras --------------------------------------
 thop  # FLOPS computation
 # pycocotools>=2.0.0  # COCO mAP
-angles
-folium
+#angles
+#folium
 
 
 jupyterlab
 jupyterlab-vim
-jupyterlab-lsp
+#jupyterlab-lsp
 #python-lsp-server[all]
-jedi-language-server
+#jedi-language-server
